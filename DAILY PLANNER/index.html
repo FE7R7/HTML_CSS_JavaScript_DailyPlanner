@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Fer Planner</title>
+		<link href="images/favicon.ico" rel="shortcut icon" />
+		<link rel="stylesheet" href="css/w3.css">
+		<script type="text/javascript" src="js/myScript.js"></script>		
+	</head>
+	<body style="background-color:#7d7061" class="w3-margin">
+		<header>
+			<div class="w3-row w3-margin-bottom-image-short">
+				<div class="w3-third w3-margin-top">
+					<table class="w3-border w3-center" style="margin-left:22%;">
+						<tr>
+							<td><h1 id="date" class="w3-margin-bottom-short" style="-webkit-text-fill-color: rgb(255, 255, 255); width: 100%;height: 50%;margin-left:0px;margin-right:0px;"></h1></td>
+							<td class="w3-align-right"><h2 id="time" class="w3-padding w3-margin-bottom-short" style="-webkit-text-fill-color: rgb(255, 255, 255); width: 100%;height: 50%;"></h2></td>
+						</tr>
+					</table>
+					<p class="w3-center" style="margin-left:8%;"><button id="newDay" class="w3-button w3-green w3-round ">NEW DAY</button></p>
+				</div>
+				<div class="w3-third">
+					<h1 style="-webkit-text-fill-color: rgb(0, 0, 255); width: 100%;" class="w3-row w3-center w3-margin-bottom-image-short w3-margin-image-top"><img src="image/fe.png" alt="fe" style="width:60%;margin-left:0%"></h1>
+				</div>
+				<div class="w3-third" style="margin-left:0px;">
+					<p class="w3-text-white w3-center" style="margin-right:0%;"><b>WATER IS LIFE: </b><br>(Glass of 250ml)</p>
+					<div class="w3-row w3-margin-bottom-short w3-margin-left-water w3-margin-right">
+						<table class="w3-center">
+							<tr class="w3-center">
+								<td style="-webkit-text-fill-color: rgb(0, 0, 255);"><input type="checkbox" name="Glass1"  id="water1"><b>  1 Glass</b></td>
+								<td style="-webkit-text-fill-color: rgb(0, 0, 255);"><input type="checkbox" name="Glass2" id="water2"><b>  2 Glasses</b></td>
+								<td style="-webkit-text-fill-color: rgb(0, 0, 255);"><input type="checkbox" name="Glass3" id="water3"><b>  3 Glasses</b></td>
+								<td style="-webkit-text-fill-color: rgb(0, 0, 255);"><input type="checkbox" name="Glass4" id="water4"><b>  4 Glasses</b></td>
+							</tr>
+							<tr>
+								<td colspan="4">
+									<div class="w3-light-grey w3-round-xlarge" style="height:24px;width:102%" id="proBarGrey">
+										<div class="w3-blue w3-round-xlarge" style="height:24px;width:8%" id="proBar"></div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4"><h5 id="waterMessage" class="w3-text-white">Let's start hydrating</h5></td> 
+							</tr>
+							<tr>
+								<td colspan="4" id="waterFace"><img style="width:10%;" alt="water" src="image/water.png" ></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</header>
+		<hr>
+
+		<main>
+			<div class="w3-row">
+				<div class="w3-center w3-half">
+					<table class="w3-table" style="width:20%; margin-left: auto; margin-right: auto;">
+						<tr>
+							<td><input type="text" id="input" style="height:36px;"></td>
+							<td><button class="w3-button w3-green w3-block w3-round" id="addItem">Add</button></td>
+							<td><input type="text" id="remove" style="width:50px;height:36px"></td>
+							<td><button class="w3-button w3-green w3-block w3-round" id="removeItem">Remove</button></td>
+							<td><input type="text" id="achieved" style="width:50px;height:36px"></td>
+							<td><button class="w3-button w3-green w3-block w3-round" id="achievedItem">Achieved</button></td>
+						</tr>
+					</table>
+				</div>
+				<div id="listAchieved" class="w3-center w3-half">
+					<p class="w3-text-white w3-center w3-padding w3-large w3-margin-bottom w3-margin-top w3-card" style="width:50%;margin-left:220px"><b>DAY ACHIEVEMENTS:  </b></p>
+				</div>
+			</div>
+			<div class="w3-half w3-row">
+				<div id="listItems" class="w3-row w3-center w3-text-white"><p class="w3-text-white w3-padding w3-large"><b>TO DO LIST: </b></p>
+				</div>
+				<div>
+					<p id="check" class="w3-center"><img src="image/check.png" alt="check"></p>
+				</div>
+			</div>
+			<div class="w3-half w3-row">
+				<div id="achievedAdd" class="w3-row w3-center w3-text-white" style="margin-left:104px"><p class="w3-text-white w3-padding w3-large"><b>ACHIEVED LIST: </b></p>
+				</div>
+				<div>
+					<p id="checkit" class="w3-center w3-margin-left w3-margin-bottom"><img src="image/check.png" alt="check2"></p>
+				</div>
+			</div>
+			<div class="w3-row">
+				<div class="w3-half">
+					<table class=" w3-table">
+						<tr>
+							<td class="w3-center"><button id="display" class="w3-button w3-green w3-round ">Display To Do List</button></td>
+							<td class="w3-center"><button id="hide" class="w3-button w3-green w3-round">Hide To Do List</button></td>
+						</tr>
+					</table>
+				</div>
+				<div class="w3-half">
+					<table class=" w3-table">
+						<tr>
+							<td><input type="text" id="removeit" class="w3-margin-left-achievement" style="width:50px;height:36px"></td>
+							<td><button id="removeA" class="w3-button w3-green w3-round w3-padding w3-margin-right-achievement" style="width: 54%;">Remove Achievement</button></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<hr>
+
+			<div class="w3-row">
+					<div class="w3-third">
+						<p class="w3-text-white w3-padding w3-card w3-center w3-large w3-margin-left" style="width:50%;"><b>GENERAL NOTES: </b></p>
+					<div class="w3-row" style="margin-left:9%;margin-top:6%;" id="generalNotes"><textarea rows="15" cols="47" maxlength="400" name="notes" style="resize: none; overflow:auto;"></textarea></div>
+					</div>
+					<div class="w3-third">
+						<p class="w3-padding w3-card w3-text-white w3-center w3-large  w3-margin-left" style="width:50%"><b>SHOPPING LIST: </b></p>
+						<div class="w3-text-black">
+							<div id="scrollbox">
+								<img id="ima" class="w3-margin-left" style="width:50%;margin-top:14px" src="image/fruits.png" alt="shopping">
+							</div>
+						</div>
+						<div class="w3-margin-top">
+							<table class="w3-table" style="width:20%; margin-left: 110px; margin-right: auto;">
+								<tr>
+									<td><input type="text" id="shopinput" style="width:160px;height:36px;"></td>
+									<td><button class="w3-button w3-green w3-block w3-round" style="width:60px;" id="addShop">+</button></td>
+								</tr>
+								<tr>
+									<td><input type="text" id="removeShop" style="width:160px;height:36px"></td>
+									<td><button class="w3-button w3-green w3-block w3-round" style="width:60px;" id="removeShopButton">-</button></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="w3-third">
+							<div>
+								<p class="w3-padding w3-card w3-text-white w3-center w3-large" style="width:50%;margin-bottom:28px;margin-left:142px;"><b>CALCULATOR: </b></p>
+							</div>
+								<div class="calculator">
+									<div id="calcdis" class="calculator__display">0</div>
+									<div id="calckey" class="calculator__keys">
+											<button class="key--operator" data-action="add">+</button>
+											<button class="key--operator" data-action="subtract">-</button>
+											<button class="key--operator" data-action="multiply">*</button>
+											<button class="key--operator" data-action="divide">/</button>
+											<button>7</button>
+											<button>8</button>
+											<button>9</button>
+											<button>4</button>
+											<button>5</button>
+											<button>6</button>
+											<button>1</button>
+											<button>2</button>
+											<button>3</button>
+											<button>0</button>
+											<button data-action="decimal">.</button>
+											<button data-action="clear">AC</button>
+											<button class="key--equal" data-action="calculate">=</button>
+									</div>
+									<button class="w3-button w3-green w3-block w3-round" style="width:100%;" id="startCalc">Start Calculator</button>
+								</div>
+						</div>
+				</div>
+		</main>
+		<hr>
+
+		<footer>
+				<div class="w3-row w3-text-green w3-center"><h5><b>DEVELOPED BY A00289109 - FER</b></h5></div>
+		</footer>
+	</body>
+</html>
